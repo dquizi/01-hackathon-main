@@ -2,7 +2,7 @@ import { Module } from '../core/module'
 
 export class GreetingsModule extends Module {
   constructor() {
-    super('alert', 'Приветствие')
+    super('gteetings', 'Приветствие')
   }
 
   trigger() {
