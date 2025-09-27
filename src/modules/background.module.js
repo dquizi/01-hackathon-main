@@ -15,5 +15,3 @@ export class BackgroundModule extends Module {
     document.body.style.backgroundColor = getRandomRgb()
   }
 }
-
-console.log('test background');
