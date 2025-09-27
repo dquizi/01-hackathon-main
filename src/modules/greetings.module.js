@@ -9,8 +9,17 @@ export class GreetingsModule extends Module {
     // alert('Привет!')
     const messageHTML = document.createElement('div');
     // messageHTML.className = 'menu-item';
-    messageHTML.style.possision = 'bottom'
-    messageHTML.textContent = 'hello'
+    messageHTML.style.right = '0';
+    messageHTML.style.pisition = 'absolute';
+    messageHTML.style.width = '200px';
+    messageHTML.style.height = '200px';
+    messageHTML.style.margin = '10px';
+    messageHTML.style.background = '#1b1a1a';
+    messageHTML.style.color = '#eee';
+    messageHTML.style.display = 'block';
+    messageHTML.style.boxSizing = 'border-box';
+    // const text = 'Hello';
+    messageHTML.textContent = 'Hello'.repeat(40);
     document.body.append(messageHTML);
   }
 }
