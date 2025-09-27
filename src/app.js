@@ -1,4 +1,7 @@
 import './styles.css'
+import { ContextMenu } from './menu.js'
+import { GreetingsModule } from './modules/greetings.module.js'
 
+const menuHTML = new ContextMenu('#menu')
 
-const elem = new ContextMenu();
+menuHTML.add(new GreetingsModule())
