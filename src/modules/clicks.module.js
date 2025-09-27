@@ -8,12 +8,25 @@ export class ClicksModule extends Module {
   trigger() {
     alert('Таймер запущен (5 сек)! Делайте клики!');
 
-    let counter = 0;
+    let counterAllClicks = 0;
+    let counterDoubleClicks = 0;
 
-    setTimeout();
+    const click1Handler = () => {
+      counterAllClicks++;
+    };
 
-    document.addEventListener('click', () => {
-      counter += counter;
-    })
+    const click2Handler = () => {
+      counterDoubleClicks++;
+    };
+
+    document.addEventListener('click', click1Handler);
+    document.addEventListener('dblclick', click2Handler);
+
+    setTimeout(() => {
+      document.removeEventListener('click', click1Handler);
+      document.removeEventListener('dblclick', click2Handler);
+
+      alert(`Всего кликов - ${counterAllClicks}, в том числе ${counterDoubleClicks} двойных!`);
+    }, 5000);
   }
 }
