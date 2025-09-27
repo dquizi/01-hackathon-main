@@ -6,6 +6,11 @@ export class GreetingsModule extends Module {
   }
 
   trigger() {
-    alert('Привет!')
+    // alert('Привет!')
+    const messageHTML = document.createElement('div');
+    // messageHTML.className = 'menu-item';
+    messageHTML.style.possision = 'bottom'
+    messageHTML.textContent = 'hello'
+    document.body.append(messageHTML);
   }
 }
