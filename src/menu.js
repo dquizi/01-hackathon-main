@@ -5,7 +5,6 @@ export class ContextMenu extends Menu {
     super(selector)
 
     document.addEventListener('contextmenu', event => {
-      console.log(event)
       event.preventDefault()
       this.open(event.clientX, event.clientY)
     })
