@@ -7,7 +7,18 @@ export class BackgroundModule extends Module {
   }
 
   trigger() {
-    document.body.style.backgroundColor = `rgb(random(1, 256), random(1, 256), random(1, 256))`
+    // document.body.style.backgroundColor = `rgb(${random(1, 256)}, ${random(1, 256)}, ${random(1, 256)})`
+
+    // либо замудрить:
+    let randomRGB = []
+    const createColorIndex = () => {
+      for (let i=0; i<3; i++) {
+        randomRGB.push(random(1, 256));
+      }
+    }
+    createColorIndex()
+    const color = randomRGB.join(',');
+    document.body.style.backgroundColor = `rgb(${color})`
   }
 }
 
