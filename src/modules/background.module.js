@@ -7,8 +7,7 @@ export class BackgroundModule extends Module {
   }
 
   trigger() {
-    const randomColor = random(1, 256);
-    document.body.style.backgroundColor = `rgb(${randomColor}, ${randomColor}, ${randomColor})`
+    document.body.style.backgroundColor = `rgb(random(1, 256), random(1, 256), random(1, 256))`
   }
 }
 
