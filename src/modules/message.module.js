@@ -4,9 +4,13 @@ import buuuImg from '../assets/buuu.png'
 export class MessageModule extends Module {
   constructor() {
     super('message', 'Сообщение')
+      this.isRunning = false
   }
   
   trigger() {
+    if (this.isRunning) return;
+    this.isRunning = true;
+
     const messageHTML = document.createElement('div');
     messageHTML.style.position = 'fixed';
     messageHTML.style.right = '0%';
@@ -56,6 +60,7 @@ export class MessageModule extends Module {
     setTimeout(() => {
       img.remove();
       messageHTML.remove();
+      this.isRunning = false
     }, 6250)
   }
 }
