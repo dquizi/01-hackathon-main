@@ -65,7 +65,15 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-          type: 'asset/resource',
+          use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash].[ext]',
+              outputPath: 'images',
+            },
+          },
+        ],
         },
       ],
     }
