@@ -15,14 +15,17 @@ export class ContextMenu extends Menu {
     this.el.style.left = x + 'px'
     this.el.classList.add('open')
   }
-
+  
   close() {
     this.el.classList.remove('open')
   }
-
+  
   add(module) {
     this.el.insertAdjacentHTML('beforeend', module.toHTML())
     this.el.querySelector(`[data-type="${module.type}"]`)
-      .addEventListener('click', () => module.trigger())
+    .addEventListener('click', () => {
+      module.trigger()
+      this.el.classList.toggle('open')
+    })
   }
 }

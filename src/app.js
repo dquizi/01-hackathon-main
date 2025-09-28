@@ -1,9 +1,9 @@
 import './styles.css'
-import { ContextMenu } from './menu.js'
-import { GreetingsModule } from './modules/greetings.module.js'
-import { BackgroundModule } from './modules/background.module.js'
+import { ContextMenu } from './menu'
+import { MessageModule } from './modules/message.module'
+import { BackgroundModule } from './modules/background.module'
 
 const menuHTML = new ContextMenu('#menu')
 
-menuHTML.add(new GreetingsModule())
+menuHTML.add(new MessageModule())
 menuHTML.add(new BackgroundModule())
