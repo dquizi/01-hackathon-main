@@ -1,4 +1,5 @@
 import { Module } from '../core/module'
+import { random } from '../utils'
 
 export class BackgroundModule extends Module {
   constructor() {
@@ -6,12 +7,19 @@ export class BackgroundModule extends Module {
   }
 
   trigger() {
-    function getRandomRgb() {
-      const red = Math.floor(Math.random() * 256)
-      const green = Math.floor(Math.random() * 256)
-      const blue = Math.floor(Math.random() * 256)
-      return `rgb(${red}, ${green}, ${blue})`
+    // document.body.style.backgroundColor = `rgb(${random(1, 256)}, ${random(1, 256)}, ${random(1, 256)})`
+
+    // либо замудрить:
+    let randomRGB = []
+    const createColorIndex = () => {
+      for (let i=0; i<3; i++) {
+        randomRGB.push(random(1, 256));
+      }
     }
-    document.body.style.backgroundColor = getRandomRgb()
+    createColorIndex()
+    const color = randomRGB.join(',');
+    document.body.style.backgroundColor = `rgb(${color})`
   }
 }
+
+

@@ -8,7 +8,7 @@ export class ClicksModule extends Module {
   trigger() {
     alert('Таймер запущен (5 сек)! Делайте клики!');
 
-    let counterAllClicks = 0;
+    let counterAllClicks = -1;
     let counterDoubleClicks = 0;
 
     const click1Handler = () => {
